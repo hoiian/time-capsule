@@ -1,14 +1,19 @@
 <template>
   <div
-    class="min-h-screen bg-black text-white p-6 flex flex-col justify-center relative"
+    class="min-h-screen bg-zinc-950 text-white p-6 flex flex-col justify-center relative"
   >
     <!-- 返回箭頭 -->
-    <button @click="$router.back()" class="text-white text-2xl mb-4">←</button>
+    <button
+      @click="$router.back()"
+      class="absolute top-6 left-6 text-white text-2xl mb-4"
+    >
+      ←
+    </button>
 
     <!-- 留下的內容選擇 -->
-    <div class="space-y-6 z-10">
+    <div class="space-y-8 z-10">
       <div>
-        <p class="text-lg font-semibold mb-3">我想留</p>
+        <p class="text-3xl mb-3">我想留</p>
         <div class="flex gap-3">
           <button
             :class="type === 'text' ? activeBtn : inactiveBtn"
@@ -26,7 +31,7 @@
       </div>
 
       <div>
-        <p class="text-lg font-semibold mb-3">俾</p>
+        <p class="text-3xl mb-3">俾</p>
         <div class="flex flex-wrap gap-3">
           <button
             v-for="option in timeOptions"
@@ -40,7 +45,7 @@
       </div>
 
       <div>
-        <p class="text-lg font-semibold mb-3">嘅</p>
+        <p class="text-3xl mb-3">嘅</p>
         <div class="flex gap-3">
           <button
             :class="target === 'self' ? activeBtn : inactiveBtn"

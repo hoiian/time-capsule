@@ -1,15 +1,21 @@
 <template>
   <div
-    class="min-h-screen bg-black text-white p-6 flex flex-col justify-between relative"
+    class="min-h-screen bg-zinc-950 text-white p-6 flex flex-col justify-between relative"
   >
+    <!-- 返回箭頭 -->
+    <button
+      @click="$router.back()"
+      class="absolute top-6 left-6 text-white text-2xl mb-4"
+    >
+      ←
+    </button>
     <!-- 留言框區域 -->
-    <div class="mt-6">
-      <p class="text-white/70 mb-2">留低你嘅文字，未來會告訴你答案……</p>
+    <div class="mt-12">
       <div class="relative">
         <textarea
           v-model="message"
-          placeholder="..."
-          class="w-full h-64 p-4 bg-black border border-white/20 rounded-xl resize-none text-sm placeholder-white/30"
+          placeholder="留低你嘅文字，未來會告訴你答案……"
+          class="w-full h-64 p-4 bg-zinc-950 border border-white/20 rounded-xl resize-none text-sm placeholder-white/30"
         ></textarea>
 
         <!-- 附加圖片 icon -->
@@ -34,7 +40,7 @@
 
     <!-- 提交按鈕 -->
     <button
-      class="mt-6 bg-yellow-400 text-black font-medium w-full py-4 rounded-xl text-center flex items-center justify-center gap-2"
+      class="mt-6 bg-amber-300 text-black font-medium w-full py-4 rounded-xl text-center flex items-center justify-center gap-2"
       @click="submit"
     >
       <svg
